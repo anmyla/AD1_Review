@@ -98,8 +98,9 @@ public class List_LinkedList {
             Node previousNode = getNodeAtIndex(index - 1);
 
             if (previousNode != null && previousNode.getNext() != null) {
-                Node currentNode = previousNode.getNext();
-                previousNode.setNext(currentNode.getNext());
+                Node currentNode = previousNode.getNext().getNext(); //saving to a variable to prevent data loss
+                previousNode.setNext(currentNode);
+
 
                 if (currentNode == last) {
                     // If the deleted node is the last node
@@ -111,8 +112,8 @@ public class List_LinkedList {
         }
     }
 
-    public void interchange2NeighboringEntries(int index) { //position node1 to interchange, node2 will be at position index+1
-        Node baseNode = getNodeAtIndex(index - 1); //we get the node prior to node1
+    public void interchange2NeighboringEntries(int index) { // interchange array[index] with its predecessor
+        Node baseNode = getNodeAtIndex(index - 1); //we get the node prior to array[index]
 
         if(first == null) {
             System.out.println("List is empty, nothing to interchange!");

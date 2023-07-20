@@ -10,7 +10,6 @@ public class MainDLL {
             counter++;
         }
     }
-
     public static void main(String[] args) {
         DoubleLinkedList myToDoList = new DoubleLinkedList();
 
@@ -43,6 +42,5 @@ public class MainDLL {
         System.out.println("\n------After Deleting Entry at a particular index------");
         myToDoList.deleteEntryAtIndex(1);
         printList(myToDoList);
-
     }
 }
